@@ -282,7 +282,7 @@ const reblog = users => {
                                 // Голосуем за пост, которому сделали репост
                                 console.log(`\x1b[96m💬 [Отправлен комментарий и upvote ${count}][${author}] ${title}\x1b[0m`)
                                 golos.broadcast.vote(postingkey, REBLOGGER, author, permlink, VOTEPOWER, (error, result) => {
-                                    //console.log(error,result)
+                                    if(error) return console.log(error)
                                 });
 
                             })
